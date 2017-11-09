@@ -3,6 +3,9 @@ package main.java.br.com.deordines.patterns.comportamental.interpreter.exemplo1;
 /**
  * DESIGN PATTERNS - INTERPRETER
  *
+ * CONCEITO:
+ * Definir uma representação de gramática e um interpretador que se baseará nessa representação para interpretar a linguagem.
+ *
  * VANTAGENS:
  * Fácil extensão;
  * Fácil implementação de novas regras.
@@ -18,9 +21,9 @@ public class Aplicacao {
         Contexto contexto = new Contexto(170);
 
         expressao = new ExpressaoBinaria();
-        System.out.println(expressao.interpretar(contexto));
+        System.out.println(expressao.interpretar(contexto).getSaida());
 
         expressao = new ExpressaoHexadecimal();
-        System.out.println(expressao.interpretar(contexto));
+        System.out.println(expressao.interpretar(contexto).getSaida());
     }
 }

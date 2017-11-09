@@ -3,10 +3,14 @@ package main.java.br.com.deordines.patterns.criacao.factorymethod.exemplo1;
 /**
  * DESIGN PATTERNS - FACTORY METHOD
  *
+ * CONCEITO:
+ * Passar a responsabilidade de instanciação para subclasses.
+ *
  * VANTAGENS:
- * Definir uma interface para criar os objetos, deixando as subclasses decidirem qual objeto será instanciado;
+ * Definir uma interface para criar os objetos;
  * Baixo acoplamento;
- * Maior flexibilidade - facilita a inserção de novas classes.
+ * Maior flexibilidade;
+ * Fácil inserção de novas classes.
  *
  * DESVANTAGENS:
  * Alto número de classes criadas.

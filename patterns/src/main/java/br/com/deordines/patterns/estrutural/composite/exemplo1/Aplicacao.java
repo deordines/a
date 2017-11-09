@@ -3,9 +3,11 @@ package main.java.br.com.deordines.patterns.estrutural.composite.exemplo1;
 /**
  * DESIGN PATTERN - COMPOSITE
  *
+ * CONCEITO:
+ * Permitir que os clientes tratem objetos individuais e compostos uniformemente.
+ *
  * VANTAGENS:
  * Código simplificado;
- * Tratar objetos concretos e compostos uniformemente;
  * Facilidade na adição de novos objetos.
  *
  * DESVANTAGENS:
