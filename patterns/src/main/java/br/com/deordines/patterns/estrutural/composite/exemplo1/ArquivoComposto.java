@@ -31,6 +31,12 @@ public class ArquivoComposto extends Arquivo {
     }
 
     @Override
+    protected void adicionar(List<Arquivo> arquivos) throws Exception {
+        this.arquivos.addAll(arquivos);
+        arquivos.stream().forEach(a -> System.out.println(String.format("[%s] adicionado com sucesso.", a.getNomeDoArquivo())));
+    }
+
+    @Override
     protected void remover(Arquivo arquivo) throws Exception {
         arquivos.removeIf(a -> a.equals(arquivo));
         System.out.println(String.format("[%s] removido com sucesso.", arquivo.getNomeDoArquivo()));

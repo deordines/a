@@ -28,6 +28,10 @@ public abstract class Arquivo {
         throw new Exception(String.format("Não é possível adicionar o arquivo [%s]. Não é uma pasta.", getNomeDoArquivo()));
     }
 
+    protected void adicionar(List<Arquivo> arquivos) throws Exception {
+        throw new Exception(String.format("Não é possível adicionar o arquivo [%s]. Não é uma pasta.", getNomeDoArquivo()));
+    }
+
     protected void remover(Arquivo arquivo) throws Exception {
         throw new Exception(String.format("Não é possível remover o arquivo [%s]. Não é uma pasta.", getNomeDoArquivo()));
     }
