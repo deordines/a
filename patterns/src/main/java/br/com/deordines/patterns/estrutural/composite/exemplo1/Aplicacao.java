@@ -1,5 +1,8 @@
 package main.java.br.com.deordines.patterns.estrutural.composite.exemplo1;
 
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * DESIGN PATTERN - COMPOSITE
  *
@@ -23,40 +26,53 @@ public class Aplicacao {
         Arquivo video = new ArquivoVideo("meu video", ".mkv");
         Arquivo imagem = new ArquivoImagem("minha foto", ".jpg");
 
+        System.out.println("\n1 - Adicionando arquivo dentro de outro arquivo:");
+        adicionar(video, video);
+
+        System.out.println("\n2 - Adicionando arquivos dentro da pasta:");
+        List<Arquivo> lista = Arrays.asList(video, video, imagem, imagem, novaPasta);
+        adicionar(pasta, lista);
+
+        System.out.println("\n3 - Pesquisando arquivo inexistente dentro da pasta:");
+        pesquisar(pasta, "q");
+
+        System.out.println("\n4 - Pesquisando arquivo existente dentro da pasta:");
+        pesquisar(pasta, "a");
+
+        System.out.println("\n5 - Removendo arquivo da pasta:");
+        remover(pasta, novaPasta);
+
+        System.out.println("\n6 - Pesquisando arquivo existente dentro da pasta:");
+        pesquisar(pasta, "a");
+    }
+
+    private static void adicionar(Arquivo pasta, Arquivo arquivo) {
         try {
-            System.out.println("\n1 - Adicionando arquivo dentro de outro arquivo:");
-            video.adicionar(video);
+            pasta.adicionar(arquivo);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    private static void adicionar(Arquivo pasta, List<Arquivo> arquivos) {
         try {
-            System.out.println("\n2 - Adicionando arquivos dentro da pasta:");
-            pasta.adicionar(video);
-            pasta.adicionar(video);
-            pasta.adicionar(imagem);
-            pasta.adicionar(imagem);
-            pasta.adicionar(novaPasta);
+            pasta.adicionar(arquivos);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    private static void pesquisar(Arquivo pasta, String nome) {
         try {
-            System.out.println("\n3 - Pesquisando arquivo inexistente dentro da pasta:");
-            pasta.getArquivo("q").stream().forEach(t -> t.printNomeDoArquivo());
+            pasta.getArquivo(nome).stream().forEach(t -> t.printNomeDoArquivo());
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+    }
 
+    private static void remover(Arquivo pasta, Arquivo arquivo) {
         try {
-            System.out.println("\n4 - Pesquisando arquivo existente dentro da pasta:");
-            pasta.getArquivo("a").stream().forEach(t -> t.printNomeDoArquivo());
-
-            System.out.println("\n5 - Removendo arquivo da pasta:");
-            pasta.remover(novaPasta);
-
-            System.out.println("\n6 - Pesquisando arquivo existente dentro da pasta:");
-            pasta.getArquivo("a").stream().forEach(t -> t.printNomeDoArquivo());
+            pasta.remover(arquivo);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
