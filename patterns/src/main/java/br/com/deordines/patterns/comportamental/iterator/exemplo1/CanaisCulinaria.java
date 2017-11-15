@@ -5,10 +5,10 @@ public class CanaisCulinaria implements Canais {
     private Canal[] canais;
 
     public CanaisCulinaria() {
-        this.canais = new Canal[3];
-        canais[0] = new Canal("MasterChef");
-        canais[1] = new Canal("Mais Você");
-        canais[2] = new Canal("");
+        this.canais = new Canal[]{
+                new Canal("MasterChef"),
+                new Canal("Mais Você")
+        };
     }
 
     @Override

@@ -30,8 +30,10 @@ public class Aplicacao {
     }
 
     private static void iterar(Canais canais) {
-        for (IIterator i = canais.criarIterator(); !i.isDone(); i.next()) {
-            System.out.println("- " + i.currentItem().getNome());
+        IIterator iterator = canais.criarIterator();
+        while (iterator.hasNext()) {
+            Canal canal = iterator.next();
+            System.out.println("- " + canal.getNome());
         }
     }
 }

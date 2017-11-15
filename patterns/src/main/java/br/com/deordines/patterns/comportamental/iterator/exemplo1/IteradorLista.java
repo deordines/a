@@ -5,35 +5,27 @@ import java.util.List;
 public class IteradorLista implements IIterator {
 
     private List<Canal> canais;
-    private int contador;
+    private int posicao;
 
     public IteradorLista(List<Canal> canais) {
         this.canais = canais;
-        this.contador = 0;
+        this.posicao = 0;
     }
 
     @Override
-    public void first() {
-        contador = 0;
+    public Canal first() {
+        return canais.get(0);
     }
 
     @Override
-    public void next() {
-        contador++;
+    public Canal next() {
+        Canal canal = canais.get(posicao);
+        posicao++;
+        return canal;
     }
 
     @Override
-    public boolean isDone() {
-        return contador == canais.size();
-    }
-
-    @Override
-    public Canal currentItem() {
-        if (isDone()) {
-            contador = canais.size() - 1;
-        } else  if (contador < 0) {
-            contador = 0;
-        }
-        return canais.get(contador);
+    public boolean hasNext() {
+        return posicao < canais.size();
     }
 }
