@@ -1,7 +1,7 @@
 package main.java.br.com.deordines.patterns.estrutural.decorator.exemplo1;
 
 /**
- * DESIGN PATTERN - ITERATOR
+ * DESIGN PATTERN - DECORATOR
  *
  * CONCEITO:
  * Modificar a funcionalidade de um objeto em tempo de execução.
